@@ -145,6 +145,11 @@
     .step-desc{color:var(--muted);line-height:1.5;font-size:.85rem}
     .modal-footer{margin-top:25px}
 
+    /* ===== NEW (Simple Analytics): footer styling ===== */
+    .site-footer{border-top:1px solid var(--border);padding:24px 60px;display:flex;justify-content:center}
+    .site-footer img{height:40px;width:auto;display:block}
+    /* ===== END NEW ===== */
+
     /* ----- Tablet & phone layouts ----- */
     @media (min-width:901px) and (max-width:1100px){
       nav{padding:16px 24px} .logo{min-width:180px} .nav-links{gap:16px} .nav-links a{font-size:.78rem}
@@ -154,6 +159,7 @@
       .top-section,.hero{grid-template-columns:1fr}
       nav{padding:16px 24px} .nav-links{display:none}
       .hero{padding:48px 24px;gap:40px} .trust-bar{padding:24px}
+      .site-footer{padding:24px} /* NEW (Simple Analytics): footer padding on phones */
       .card-panel{border-right:none;border-bottom:1px solid var(--border)}
       .modal-content{padding:36px 24px}
       .examples-overlay.show{padding:16px} .examples-modal{max-height:calc(100vh - 32px);padding:18px}
@@ -294,6 +300,29 @@
     </div>
   </div>
 
+  <!-- ================= NEW (Simple Analytics): FOOTER WITH BADGE =================
+       CHANGE "dai-solutions.org" (3 places below) to the exact domain you
+       registered in Simple Analytics. Both versions use the dark badge
+       because this site is always dark. -->
+  <footer class="site-footer">
+    <a href="https://www.simpleanalytics.com?utm_source=dai-solutions.org&utm_content=badge" referrerpolicy="origin" target="_blank">
+      <picture>
+        <source
+          srcset="https://simpleanalyticsbadges.com/dai-solutions.org?mode=dark&counter=false"
+          media="(prefers-color-scheme: dark)"
+        />
+        <img
+          src="https://simpleanalyticsbadges.com/dai-solutions.org?mode=dark&counter=false"
+          alt="Simple Analytics"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          crossorigin="anonymous"
+        />
+      </picture>
+    </a>
+  </footer>
+  <!-- ================= END NEW: FOOTER ================= -->
+
   <!-- ================= POP-UP: SCHEDULE A CONSULTATION ================= -->
   <div class="modal-overlay" id="contact-modal">
     <div class="modal-content">
@@ -366,5 +395,11 @@
     document.querySelectorAll('.modal-close').forEach(function (btn) { btn.addEventListener('click', closeAll); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
   </script>
+
+  <!-- ================= NEW (Simple Analytics): TRACKING SCRIPT =================
+       This is what actually counts your visitors (the badge alone does not).
+       If your Simple Analytics dashboard shows a different script line, use theirs. -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <!-- ================= END NEW: TRACKING SCRIPT ================= -->
 </body>
 </html>
